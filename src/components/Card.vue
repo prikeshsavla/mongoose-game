@@ -6,13 +6,13 @@ const rank = () => {
     return faces.hasOwnProperty(props.card.rank) ? faces[props.card.rank] : props.card.rank.toString()
 }
 const suit =  () => {
-    return '&' + props.card.face + ';'
+    return '&' + props.card.suit + ';'
 }
 </script>
 <template>
     <!-- <div class="card back">{{ card ? card.card : noCardText }}</div> -->
     <template v-if="card">
-    <div :class="'card rank-' + rank() +  ' ' + card.face ">
+    <div :class="'card rank-' + rank() +  ' ' + card.suit ">
         <span class="rank">{{ rank(card.rank).toUpperCase() }}</span>
         <span class="suit" v-html="suit()"></span>
     </div>
